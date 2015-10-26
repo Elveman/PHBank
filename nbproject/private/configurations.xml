@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="build">
+        <in>FreeSans_ttf.h</in>
+        <in>PokemonGB_ttf.h</in>
+        <in>RobotoRegular_ttf.h</in>
+      </df>
+      <df name="data">
+      </df>
+      <df name="include">
+        <df name="viewer">
+          <in>box_viewer.hpp</in>
+          <in>image_manager.hpp</in>
+          <in>savexit_viewer.hpp</in>
+          <in>ultra_box_viewer.hpp</in>
+          <in>viewer.hpp</in>
+        </df>
+        <in>filesystem.hpp</in>
+        <in>main.hpp</in>
+        <in>phbank.hpp</in>
+        <in>pkbank.hpp</in>
+        <in>pkdata.hpp</in>
+        <in>pkfilter.hpp</in>
+        <in>pokemon.hpp</in>
+      </df>
+      <df name="source">
+        <df name="viewer">
+          <df name="res">
+            <in>box_background.cpp</in>
+            <in>box_icons.cpp</in>
+            <in>box_tiles.cpp</in>
+            <in>pkm_resume_background.cpp</in>
+          </df>
+          <in>box_viewer.cpp</in>
+          <in>savexit_viewer.cpp</in>
+          <in>ultra_box_viewer.cpp</in>
+          <in>viewer.cpp</in>
+        </df>
+        <in>filesystem.cpp</in>
+        <in>main.cpp</in>
+        <in>phbank.cpp</in>
+        <in>pkbank.cpp</in>
+        <in>pkdata.cpp</in>
+        <in>pkfilter.cpp</in>
+        <in>pokemon.cpp</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0" platformSpecific="true">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

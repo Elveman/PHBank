@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="source">
+        <df name="viewer">
+          <df name="res">
+            <in>box_background.cpp</in>
+            <in>box_icons.cpp</in>
+            <in>box_tiles.cpp</in>
+            <in>pkm_resume_background.cpp</in>
+          </df>
+          <in>box_viewer.cpp</in>
+          <in>savexit_viewer.cpp</in>
+          <in>ultra_box_viewer.cpp</in>
+          <in>viewer.cpp</in>
+        </df>
+        <in>filesystem.cpp</in>
+        <in>main.cpp</in>
+        <in>phbank.cpp</in>
+        <in>pkbank.cpp</in>
+        <in>pkdata.cpp</in>
+        <in>pkfilter.cpp</in>
+        <in>pokemon.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Важные файлы"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0" platformSpecific="true">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <platform>3</platform>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>make</buildCommand>
+          <cleanCommand>make clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="source/filesystem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/phbank.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/pkbank.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/pkdata.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/pkfilter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/pokemon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/box_viewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/res/box_background.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/viewer/res/box_icons.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/res/box_tiles.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/res/pkm_resume_background.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="source/viewer/savexit_viewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/ultra_box_viewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/viewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

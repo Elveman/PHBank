@@ -1,0 +1,5 @@
+make[1]: uname: Command not found
+make[1]: uname: Command not found
+make[1]: echo: Command not found
+make[1]: *** [FreeSans.ttf.o] Error 127
+make: *** [build] Error 2
