@@ -1,6 +1,7 @@
 #ifndef BOX_VIEWER_HPP
 #define BOX_VIEWER_HPP
 
+#include "pokemon.hpp"
 #include "phbank.hpp"
 #include "viewer.hpp"
 
@@ -91,13 +92,14 @@ class BoxViewer : public Viewer
 		Result drawTopScreen() override;
 		Result drawBotScreen() override;
 		Result updateControls(const u32& kDown = 0, const u32& kHeld = 0, const u32& kUp = 0, const touchPosition* touch = NULL) override;
-
+                bool SwitchView = false;
 		void selectViewBox(uint16_t boxID, bool inBank = false);
 	private:
 		sf2d_texture* backgroundBox = NULL;
 		sf2d_texture* backgroundResume = NULL;
 		sf2d_texture* icons = NULL;
 		sf2d_texture* tiles = NULL;
+                sf2d_texture* backgroundLegality = NULL;
 
 		CursorBox_t cursorBox;
 		CursorType_e cursorType = CursorType::SingleSelect;
@@ -117,6 +119,8 @@ class BoxViewer : public Viewer
 		void selectMovePokemon();
 		void cancelMovePokemon();
 		void populateVPkmData(vPkm_t* vPkm);
+                void LegalityView();
+                void BoxView();
 };
 
 

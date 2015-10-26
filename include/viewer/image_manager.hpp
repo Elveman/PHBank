@@ -34,12 +34,21 @@ struct PokemonResumeBackgroundGIMP
 	unsigned char pixel_data[400 * 240 * 4 + 1];
 };
 
+struct PokemonLegalityBackgroundGIMP
+{
+	unsigned int width;
+	unsigned int height;
+	unsigned int bytes_per_pixel; /* 2:RGB16, 3:RGB, 4:RGBA */ 
+	unsigned char pixel_data[400 * 240 * 4 + 1];
+};
+
 namespace ImageManager
 {
 	extern const BoxBackgroundImageGIMP boxBackground23o_img;
 	extern const BoxIconsImageGIMP boxIcons_img;
 	extern const BoxTilesImageGIMP boxTiles_img;
 	extern const PokemonResumeBackgroundGIMP pokemonResumeBackground_img;
+        extern const PokemonLegalityBackgroundGIMP legality_background;
 }
 
 

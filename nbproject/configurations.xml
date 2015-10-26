@@ -2,12 +2,16 @@
 <configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="include">
+        <in>checkedPokemon.hpp</in>
+      </df>
       <df name="source">
         <df name="viewer">
           <df name="res">
             <in>box_background.cpp</in>
             <in>box_icons.cpp</in>
             <in>box_tiles.cpp</in>
+            <in>legality_background.cpp</in>
             <in>pkm_resume_background.cpp</in>
           </df>
           <in>box_viewer.cpp</in>
@@ -59,6 +63,8 @@
           <preBuildCommand></preBuildCommand>
         </preBuild>
       </makefileType>
+      <item path="include/checkedPokemon.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="source/filesystem.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/main.cpp" ex="false" tool="1" flavor2="0">
@@ -83,6 +89,11 @@
       <item path="source/viewer/res/box_icons.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="source/viewer/res/box_tiles.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="source/viewer/res/legality_background.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="source/viewer/res/pkm_resume_background.cpp"
             ex="false"

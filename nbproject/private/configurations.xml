@@ -17,6 +17,7 @@
           <in>ultra_box_viewer.hpp</in>
           <in>viewer.hpp</in>
         </df>
+        <in>checkedPokemon.hpp</in>
         <in>filesystem.hpp</in>
         <in>main.hpp</in>
         <in>phbank.hpp</in>
@@ -31,6 +32,7 @@
             <in>box_background.cpp</in>
             <in>box_icons.cpp</in>
             <in>box_tiles.cpp</in>
+            <in>legality_background.cpp</in>
             <in>pkm_resume_background.cpp</in>
           </df>
           <in>box_viewer.cpp</in>
@@ -38,6 +40,7 @@
           <in>ultra_box_viewer.cpp</in>
           <in>viewer.cpp</in>
         </df>
+        <in>checkedPokemon.cpp</in>
         <in>filesystem.cpp</in>
         <in>main.cpp</in>
         <in>phbank.cpp</in>

@@ -5,6 +5,8 @@
 #include "image_manager.hpp"
 
 #include "pokemon.hpp"
+#include "pkdata.hpp"
+#include "checkedPokemon.hpp"
 
 #define BOX_HEADER_SELECTED -1
 #define SLOT_NO_SELECTION -1
@@ -98,6 +100,7 @@ BoxViewer::~BoxViewer()
 	if (backgroundResume) sf2d_free_texture(backgroundResume);
 	if (icons) sf2d_free_texture(icons);
 	if (tiles) sf2d_free_texture(tiles);
+        if (backgroundLegality) sf2d_free_texture(backgroundLegality);
 
 	// delete vBox;
 }
@@ -145,20 +148,19 @@ Result BoxViewer::initialize()
 		icons = sf2d_create_texture_mem_RGBA8(ImageManager::boxIcons_img.pixel_data, ImageManager::boxIcons_img.width, ImageManager::boxIcons_img.height, TEXFMT_RGBA8, SF2D_PLACE_RAM);
 	if (!tiles)
 		tiles = sf2d_create_texture_mem_RGBA8(ImageManager::boxTiles_img.pixel_data, ImageManager::boxTiles_img.width, ImageManager::boxTiles_img.height, TEXFMT_RGBA8, SF2D_PLACE_RAM);
+        if (!backgroundLegality)
+                backgroundLegality = sf2d_create_texture_mem_RGBA8(ImageManager::legality_background.pixel_data, ImageManager::legality_background.width, ImageManager::legality_background.height, TEXFMT_RGBA8, SF2D_PLACE_RAM);
 
 	sf2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
 
 	return PARENT_STEP;
 }
+void BoxViewer::LegalityView(){
+    sf2d_draw_texture(backgroundLegality, 0, 0);
+    checkedPokemon::isChecked(vPkm);
+}
 
-
-// --------------------------------------------------
-Result BoxViewer::drawTopScreen()
-// --------------------------------------------------
-{
-	if (hasRegularChild()) { if (this->child->drawTopScreen() == PARENT_STEP); else return CHILD_STEP; }
-	// Viewer::drawTopScreen();
-
+void BoxViewer::BoxView(){
 	sf2d_draw_texture(backgroundResume, 0, 0);
 
 	if (vPkm.pkm && !vPkm.emptySlot)
@@ -224,14 +226,26 @@ Result BoxViewer::drawTopScreen()
 
 		x = 246;
 		y = 147 - 15 - 2;
-		sftd_draw_text_white(x, (y += 15), " %s Hidden Power", vPkm.hiddenPower);
+		sftd_draw_text_white(x, (y += 15), "%s Hidden Power", vPkm.hiddenPower);
 		sftd_draw_text_white(x, (y += 15), "Moves");
 		sftd_draw_text_white(x, (y += 15), " %s", vPkm.moves[0]);
 		sftd_draw_text_white(x, (y += 15), " %s", vPkm.moves[1]);
 		sftd_draw_text_white(x, (y += 15), " %s", vPkm.moves[2]);
 		sftd_draw_text_white(x, (y += 15), " %s", vPkm.moves[3]);
 	}
+    }
 
+// --------------------------------------------------
+Result BoxViewer::drawTopScreen()
+// --------------------------------------------------
+{
+	if (hasRegularChild()) { if (this->child->drawTopScreen() == PARENT_STEP); else return CHILD_STEP; }
+	// Viewer::drawTopScreen();
+        if(SwitchView){
+            BoxViewer::LegalityView();
+        }
+        else
+            BoxViewer::BoxView();
 	if (hasOverlayChild()) { this->child->drawTopScreen(); }
 	return SUCCESS_STEP;
 }
@@ -399,6 +413,11 @@ Result BoxViewer::updateControls(const u32& kDown, const u32& kHeld, const u32& 
 {
 	if (hasRegularChild() || hasOverlayChild()) { if (this->child->updateControls(kDown, kHeld, kUp, touch) == PARENT_STEP); else return CHILD_STEP; }
 	
+        if (kDown & KEY_X)
+        {
+            SwitchView = (SwitchView xor true);
+        }
+        
 	if (kDown & KEY_START)
 	{
 		new SavexitViewer(StateView::Overlay, this);
